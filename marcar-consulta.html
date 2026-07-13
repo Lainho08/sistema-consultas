@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Marcar Consulta</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="cadastro">
+        <h2>Marcar Consulta</h2>
+
+        <div id="mensagem-sucesso" class="mensagem-sucesso" hidden>✅ Consulta marcada com sucesso!</div>
+
+        <form id="form-consulta">
+          <div class="campo">
+            <label for="especialidade">Especialidade / Médico</label>
+            <select id="especialidade" name="especialidade" required>
+              <option value="">Selecione uma opção</option>
+              <option value="clinico_geral">Clínico Geral</option>
+              <option value="pediatria">Pediatria</option>
+            </select>
+          </div>
+
+          <div class="campo">
+            <label for="data">Data</label>
+            <input type="date" id="data" name="data" required />
+          </div>
+
+          <div class="campo">
+            <label for="horario">Horário</label>
+            <input type="time" id="horario" name="horario" required />
+          </div>
+
+          <div class="campo">
+            <label for="motivo">Motivo da Consulta</label>
+            <select id="motivo" name="motivo" required>
+              <option value="">Selecione uma opção</option>
+              <option value="consulta">Consulta Normal</option>
+              <option value="exame">Entrega de Exame</option>
+            </select>
+          </div>
+
+          <div class="botao">
+            <button type="submit">Marcar Consulta</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
