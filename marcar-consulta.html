@@ -11,13 +11,15 @@
       <div class="cadastro">
         <h2>Marcar Consulta</h2>
 
-        <div id="mensagem-sucesso" class="mensagem-sucesso" hidden>✅ Consulta marcada com sucesso!</div>
+        <div id="mensagem-sucesso" class="mensagem-sucesso" hidden>
+          ✅ Consulta marcada com sucesso!
+        </div>
 
         <form id="form-consulta">
           <div class="campo">
             <label for="especialidade">Especialidade / Médico</label>
             <select id="especialidade" name="especialidade" required>
-              <option value="">Selecione uma opção</option>
+              <option value="" disabled selected>Selecione uma opção</option>
               <option value="clinico_geral">Clínico Geral</option>
               <option value="pediatria">Pediatria</option>
             </select>
@@ -36,7 +38,7 @@
           <div class="campo">
             <label for="motivo">Motivo da Consulta</label>
             <select id="motivo" name="motivo" required>
-              <option value="">Selecione uma opção</option>
+              <option value="" disabled selected>Selecione uma opção</option>
               <option value="consulta">Consulta Normal</option>
               <option value="exame">Entrega de Exame</option>
             </select>
@@ -46,9 +48,12 @@
             <button type="submit">Marcar Consulta</button>
           </div>
         </form>
+
+        <p class="link-cadastro">
+          <a href="principal.html">⬅ Voltar para o Menu Principal</a>
+        </p>
       </div>
     </div>
-
     <script src="js/script.js"></script>
   </body>
 </html>
