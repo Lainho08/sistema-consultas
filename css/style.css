@@ -1,58 +1,57 @@
-*{
-   margin: 0; 
-   padding: 0;
-   box-sizing: border-box;
+* {
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
+/* O body agora tem flex-direction: column para o rodapé funcionar bem em todas as telas */
+body {
     background: #f5f5f5;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
     min-height: 100vh;
-    padding: 20px;
 }
 
-
-.container{
+.container {
     display: flex;
+    flex: 1; /* Permite que o container ocupe o espaço para empurrar o footer */
     justify-content: center;
     align-items: center;
     width: 100%;
-  
+    padding: 20px;
 }
 
-
-.cadastro{
+.cadastro {
     background-color: #f5f5f5;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     width: 90%;
     max-width: 400px;
-    padding:30px;
-    border-radius:12px;
-    box-shadow:0 0 20px rgba(0,0,0,.2);
-  
-}
-.cadastro h2{
-text-align: center;
-margin-bottom: 20px;
-}
-.campo{
-margin-bottom: 20px;
-
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0,0,0,.2);
 }
 
-.campo label{
+.cadastro h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.campo {
+    margin-bottom: 20px;
+}
+
+.campo label {
     display: block;
     margin-bottom: 6px;
-    
 }
-button:hover{
-    background-color: rgb(35, 90, 160)
-    
+
+button:hover {
+    background-color: rgb(35, 90, 160);
 }
-button{
+
+button {
     background-color: rgb(64, 133, 214);
     color: #fff;
     border: none;
@@ -62,64 +61,60 @@ button{
     justify-content: center;
     cursor: pointer;
     padding: 8px 20px;
-
-}
-.botao{
-display: flex;
-justify-content: center;
 }
 
-input{
+.botao {
+    display: flex;
+    justify-content: center;
+}
+
+input {
     margin-left: none;
     width: 100%;
     border-radius: 10px;
     border: 1px solid black;
     padding: 5px 12px;
     font-size: 16px;
-    font-family: Arial, Helvetica, sans-serif
-
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-input :focus{
+input:focus {
     outline: none;
     border-color: rgb(64, 133, 214);
     box-shadow: 0 0 0 3px rgb(64, 133, 214, 0.2);
 }
 
-
-.login{
+.login {
     background-color: #f5f5f5;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     width: 90%;
     max-width: 400px;
-    padding:30px;
-    border-radius:12px;
-    box-shadow:0 0 20px rgba(0,0,0,.2);
-    
-  }
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0,0,0,.2);
+}
 
-.login h2{
+.login h2 {
     text-align: center;
-    margin-bottom: 20px;}
+    margin-bottom: 20px;
+}
     
-    
-  .lembrar{
+.lembrar {
     display: flex;
     align-items: center;
     gap: 8px;
     margin-bottom: 20px;
-  }
+}
 
-  .lembrar input[type="checkbox"]{
-    width:auto;
+.lembrar input[type="checkbox"] {
+    width: auto;
+}
 
-  }
-
-  .link-cadastro{
+.link-cadastro {
     text-align: center;
     margin-top: 15px;
     font-size: 14px;
-  }
+}
 
 .link-cadastro a {
     color: rgb(64, 133, 214);
@@ -127,22 +122,22 @@ input :focus{
     font-weight: bold;
 }
 
-.link-cadastro a:hover{
+.link-cadastro a:hover {
     text-decoration: underline;
 }
 
-.mensagem-sucesso{
-
+.mensagem-sucesso {
     background-color: #d4edda;
     color: #155724;
     padding: 12px 20px;
     border-radius: 8px;
     margin-bottom: 20px;
+    display: flex;
     align-items: center;
     font-size: 14px;
 }
 
-
+/* ================= CABEÇALHO ================= */
 .cabecalho {
     background-color: rgb(64, 133, 214);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -179,10 +174,17 @@ input :focus{
     border-color: white;
 }
 
+/* ================= ÁREA PRINCIPAL UNIFICADA ================= */
+/* Juntei as duas classes .principal que estavam duplicadas no seu código */
 .principal {
     width: 100%;
-    margin-top: 100px; 
+    flex: 1; /* Faz crescer e empurrar o rodapé */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: center;     /* Centraliza horizontalmente */
     padding: 20px;
+    margin-top: 80px; /* Dá espaço para o cabeçalho fixo */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -202,16 +204,16 @@ input :focus{
     font-size: 16px;
 }
 
-
+/* ================= MENU UNIFICADO ================= */
+/* Removi o display: grid que estava sobrando e deixei só o flex para centralizar */
 .menu {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 350px));
-    gap: 30px;
-    justify-content: center; 
-    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
-
+/* ================= CARD ================= */
 .card {
     background: white;
     padding: 35px 30px;
@@ -219,12 +221,12 @@ input :focus{
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); 
     text-align: center;
     border: 1px solid #eaeaea; 
+    width: 350px; /* Largura fixa ideal para o card */
+    box-sizing: border-box;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-
 .card:hover {
-    
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
 }
 
@@ -241,7 +243,6 @@ input :focus{
     line-height: 1.5;
 }
 
-
 .card a {
     display: inline-block;
     text-decoration: none;
@@ -255,6 +256,236 @@ input :focus{
 }
 
 .card a:hover {
-    background-color: rgb(35, 90, 160); 
-    background-color: rgb(89, 97, 114)
+      background-color: rgb(35, 90, 160);
 }
+
+/* ================= RODAPÉ ================= */
+.rodape {
+    margin-top: auto; /* Empurra o footer sempre para o final da tela */
+    text-align: center;
+    color: #777;
+    font-size: 14px;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box; 
+}
+
+.campo-senha {
+    position: relative;
+}
+
+/* Dá um espaço extra à direita dentro do input para o texto não ficar por cima do ícone */
+.campo-senha input {
+    padding-right: 40px; 
+}
+
+/* Posiciona o ícone perfeitamente no lado direito */
+.toggle-senha {
+    position: absolute;
+    right: 15px;      /* Distância da borda direita */
+    top: 36px;        /* Distância do topo (ajuste se precisar alinhar mais com a caixa) */
+    cursor: pointer;  /* Transforma o mouse em uma mãozinha indicando que é clicável */
+    font-size: 18px;
+    user-select: none; /* Evita que o usuário selecione o ícone como texto sem querer */
+}
+
+/* Incluímos o 'select' junto com o 'input' para ambos terem o mesmo design */
+input, select {
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 8px 12px; /* Ajustei um pouquinho o padding para o select respirar melhor */
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white; /* Garante fundo limpo no select */
+    box-sizing: border-box;
+}
+
+/* O mesmo brilho azul quando o usuário clica para digitar ou selecionar */
+input:focus, select:focus {
+    outline: none;
+    border-color: rgb(64, 133, 214);
+    box-shadow: 0 0 0 3px rgb(64, 133, 214, 0.2);
+}
+
+/* Seu novo hover padrão aplicado universalmente! */
+button:hover, 
+.card a:hover, 
+.cabecalho a:hover {
+    background-color: rgb(35, 90, 160);
+}
+/* ========================================================= */
+/* ================== LAYOUT DO DASHBOARD ================== */
+/* ========================================================= */
+
+/* Altera o comportamento do body APENAS na tela do admin */
+body.tela-dashboard {
+    flex-direction: row; /* Coloca o menu ao lado do conteúdo */
+    align-items: stretch;
+    background-color: #f0f4f8; /* Fundo levemente mais escuro para a área de trabalho */
+}
+
+/* --- MENU LATERAL --- */
+.menu-lateral {
+    width: 250px;
+    background-color: rgb(64, 133, 214);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+    position: fixed; /* Fixa o menu na tela */
+}
+
+.logo-admin {
+    padding: 25px 20px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.navegacao-admin {
+    flex: 1; /* Empurra o botão de sair para baixo */
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+}
+
+.navegacao-admin a, .menu-sair a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 25px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    border-left: 4px solid transparent;
+}
+
+/* O nosso Hover Oficial aplicado aqui! */
+.navegacao-admin a:hover, .menu-sair a:hover {
+    background-color: rgb(35, 90, 160);
+    border-left: 4px solid white;
+}
+
+.navegacao-admin a.ativo {
+    background-color: rgb(35, 90, 160);
+    border-left: 4px solid white;
+    font-weight: bold;
+}
+
+/* --- CONTEÚDO PRINCIPAL --- */
+.conteudo-admin {
+    flex: 1;
+    margin-left: 250px; /* Compensa o menu lateral fixo */
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.cabecalho-admin {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 15px 25px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.perfil-usuario {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.foto-perfil {
+    border-radius: 50%;
+}
+
+/* --- CARDS DE RESUMO --- */
+.cards-resumo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card-admin {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    border-left: 5px solid rgb(64, 133, 214);
+}
+
+.card-admin h3 {
+    color: #666;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.card-admin .numero {
+    font-size: 32px;
+    font-weight: bold;
+    color: #222;
+}
+
+/* Cores específicas para diferenciar os cards */
+.card-admin.verde { border-left-color: #28a745; }
+.card-admin.laranja { border-left-color: #fd7e14; }
+
+/* --- TABELA DE CONSULTAS --- */
+.painel-tabela {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.cabecalho-tabela {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.btn-novo {
+    background-color: rgb(64, 133, 214);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-novo:hover {
+    background-color: rgb(35, 90, 160);
+}
+
+.tabela-admin {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.tabela-admin th, .tabela-admin td {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.tabela-admin th {
+    color: #666;
+    font-weight: 600;
+}
+
+/* Badges de Status (As bolinhas coloridas) */
+.status {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.status.confirmada { background-color: #d4edda; color: #155724; }
+.status.aguardando { background-color: #fff3cd; color: #856404; }
+.status.cancelada { background-color: #f8d7da; color: #721c24; }
